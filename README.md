@@ -13,11 +13,11 @@ Official repository for IEEE Vision Language / Human Centered Computing (VL/HCC 
 
 
 ## Citation
-'''
+```
 @article{dowling2025autosight,
   title={AutoSIGHT: Automatic Eye Tracking-based System for Immediate Grading of Human experTise},
   author={Dowling, Byron and Probcin, Jozef and Czajka, Adam},
   journal={arXiv preprint arXiv:2508.01015},
   year={2025}
 }
-'''
+```
