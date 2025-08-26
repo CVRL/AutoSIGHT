@@ -1,5 +1,5 @@
 ### Gaze Coordinates Pipeline:
-This section outlines the files needed to process coordinate gaze data to be preprocessed for use in the Sliding Window-style CNN and the correct order in which each file needs to be run as the process can be a bit confusing. 
+This section outlines the files needed to process coordinate gaze data to be preprocessed for use in the Sliding Window-style CNN and the correct order in which each file needs to be run as the process can be a bit confusing. These scripts will need to be heavily modified to suit your needs. Early on in the research process we segmented data by Iris PAD attack types which is why many of the scripts were concerned with aggregating data in this manner. Later on we re-segmented data in a continuous manner so we could do real-time analysis. After spending some time to evaluate which scripts or sections are relevant to your needs, this pipeline shows how you can segment raw gaze data into sliding window timed segments of your choosing and there is a pipeline to resample missing sequences due to fluctuating sampling rates in eye tracking recordings. This process provides a way to ensure a fixed input size for a window size which is necessary to run the AutoSIGHT model.
 
  
 1. <strong><u>fixationParseConcat.ipynb</u></strong>
