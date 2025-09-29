@@ -38,7 +38,7 @@ The data set is organized on a per-participant basis where each participant has 
     * The same logic applies for the other window sizes
 <br>
 
-        Example JSON Object
+#### Example JSON Object
 ```json  
     {
         "participant": "2024-136-068",
@@ -64,7 +64,7 @@ The data set is organized on a per-participant basis where each participant has 
     }
 ```
 
-            Heatmap Example
+#### Heatmap Example
 <p align="left">
   <img src="Image_Assets/E_068_88_06117d752_Heatmap.png" width="500" />
 </p>
