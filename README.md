@@ -13,7 +13,7 @@ Official repository for IEEE Vision Languages and Human Centric Computing (VL/HC
 
 ## Data Sample
 Example JSON Object
-`    {
+```    {
         "participant": "2024-136-068",
         "biometricStatus": "Expert",
         "batch": 14,
@@ -40,7 +40,8 @@ Example JSON Object
         "sequences_15_Second": [],
         "sequences_20_Second": [],
         "sequences_30_Second": []
-    }`
+    }
+```
 
 
 ## Citation
