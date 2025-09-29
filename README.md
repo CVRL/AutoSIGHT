@@ -36,9 +36,9 @@ The data set is organized on a per-participant basis where each participant has 
 * The final 5 Lists contain references to sequence files such as:
     * If "sequences_5_Second" contains [1,2,3], this means that in the 5_Second folder for this partipant, the csv files sequence_1, sequence_2, and sequence_3 contain information for this image.
     * The same logic applies for the other window sizes
+<br>
 
-    \
-    Example JSON Object
+        Example JSON Object
 ```json  
     {
         "participant": "2024-136-068",
@@ -63,6 +63,11 @@ The data set is organized on a per-participant basis where each participant has 
         "sequences_30_Second": []
     }
 ```
+
+            Heatmap Example
+<p align="left">
+  <img src="Image_Assets/E_068_88_06117d752_Heatmap.png" width="500" />
+</p>
 
 
 ## Citation
