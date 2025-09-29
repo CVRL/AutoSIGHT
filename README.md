@@ -12,21 +12,34 @@ Official repository for IEEE Vision Languages and Human Centric Computing (VL/HC
 > Can we teach machines to assess the expertise of humans solving visual tasks automatically based on eye tracking features? This paper proposes AutoSIGHT, Automatic System for Immediate Grading of Human experTise, that classifies expert and non-expert performers, and builds upon an ensemble of features extracted from eye tracking data while the performers were solving a visual task. Results on the task of iris Presentation Attack Detection (PAD) used for this study show that with a small evaluation window of just 5 seconds, AutoSIGHT achieves an average average Area Under the ROC curve performance of 0.751 in subject-disjoint train-test regime, indicating that such detection is viable. Furthermore, when a larger evaluation window of up to 30 seconds is available, the Area Under the ROC curve (AUROC) increases to 0.8306, indicating the model is effectively leveraging more information at a cost of slightly delayed decisions. This work opens new areas of research on how to incorporate the automatic weighing of human and machine expertise into human-AI pairing setups, which need to react dynamically to nonstationary expertise distribution between the human and AI players (e.g. when the experts need to be replaced, or the task at hand changes rapidly). Along with this paper, we offer the eye tracking data used in this study collected from 6 experts and 53 non-experts solving iris PAD visual task.
 
 ## Data Sample
-Example JSON Object
-```    {
+The data set is organized on a per-participant basis where each participant has a collection of sequence files for different window sizes and a list of JSON objects which reflect statistics for each image shown to the participant in that study. A summary of what each JSON object contains is shown and explained below:
+
+* Participant's identifier and expertise level
+* Link to the original dataset image
+* Link to Eye Gaze Heatmap file
+* Ground truth label of the image sample
+* Inital and Final answers given by participant
+* List of Fixation Times for Initial Phase
+* Fixation Count for Initial Phase of Evaluation
+* Average Fixation Duration for Initial Phase
+* List of Fixation Times for Verbal + Final Phase 
+* Fixation Count for Verbal + Final Phase of Evaluation
+* Average Fixation Duration for Verbal + Final Phase
+* The final 5 Lists contain references to sequence files such as:
+    * If "sequences_5_Second" contains [1,2,3], this means that in the 5_Second folder for this partipant, the csv files sequence_1, sequence_2, and sequence_3 contain information for this image.
+    * The same logic applies for the other window sizes
+
+    \
+    Example JSON Object
+```json  
+    {
         "participant": "2024-136-068",
         "biometricStatus": "Expert",
-        "batch": 14,
-        "slideNumber": "1",
         "irisImageLink": "/fbi_images_unblurred/77_05052d288.png",
         "heatmapFilename": "E_068_77_05052d288_Heatmap.npy",
         "attackType": "Real Iris",
         "initial": "Normal",
         "final": "Normal",
-        "imageStartIndex": "441",
-        "initialDecisionIndex": "675",
-        "verbalPhaseCompleteIndex": "1097",
-        "finalDecisionIndex": "1099",
         "fixationTimes_InitialPhase": [],
         "fixationCount_Initial": 77,
         "averageFixationTime_Initial_MS": 127.08,
