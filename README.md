@@ -35,7 +35,7 @@ The data set is organized on a per-participant basis where each participant has 
     * The same logic applies for the other window sizes
 <br>
 
-#### Example YAML Object
+#### Example JSON Object
 ```json  
     {
         "participant": "2024-136-068",
