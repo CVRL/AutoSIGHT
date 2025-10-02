@@ -27,35 +27,30 @@ The data set is organized on a per-participant basis where each participant has 
 * Link to Eye Gaze Heatmap file
 * Ground truth label of the image sample
 * Inital and Final answers given by participant
-* List of Fixation Times for Initial Phase
-* Fixation Count for Initial Phase of Evaluation
-* Average Fixation Duration for Initial Phase
-* List of Fixation Times for Verbal + Final Phase 
-* Fixation Count for Verbal + Final Phase of Evaluation
-* Average Fixation Duration for Verbal + Final Phase
+* List of Fixation Times
+* Fixation Count for entire Evaluation
+* Average Fixation Duration (MS) for entire Evaluation
 * The final 5 Lists contain references to sequence files such as:
     * If "sequences_5_Second" contains [1,2,3], this means that in the 5_Second folder for this partipant, the csv files sequence_1, sequence_2, and sequence_3 contain information for this image.
     * The same logic applies for the other window sizes
 <br>
 
-#### Example JSON Object
+#### Example YAML Object
 ```json  
     {
         "participant": "2024-136-068",
         "biometricStatus": "Expert",
+        "batch": 14,
+        "slideNumber": "1",
         "irisImageLink": "77_05052d288.png",
         "heatmapFilename": "E_068_77_05052d288_Heatmap.png",
         "attackType": "Real Iris",
         "initial": "Normal",
         "final": "Normal",
-        "fixationTimes_InitialPhase": [],
-        "fixationCount_Initial": 77,
-        "averageFixationTime_Initial_MS": 127.08,
-        "GRI_Initial": 0.165,
-        "fixationCount_Verbal+Final": 80,
-        "averageFixationTime_Verbal+Final_MS": 124.73,
-        "fixationCount_Cumulative": 157,
-        "averageFixationTime_Cumulative_MS": 125.88,
+        "fixationTimes": [],
+        "GRI": 0.802,
+        "fixationCount": 157,
+        "averageFixationDuration": 125.88,
         "sequences_5_Second": [],
         "sequences_10_Second": [],
         "sequences_15_Second": [],
