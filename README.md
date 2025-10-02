@@ -43,7 +43,7 @@ The data set is organized on a per-participant basis where each participant has 
     {
         "participant": "2024-136-068",
         "biometricStatus": "Expert",
-        "irisImageLink": "/fbi_images_unblurred/77_05052d288.png",
+        "irisImageLink": "77_05052d288.png",
         "heatmapFilename": "E_068_77_05052d288_Heatmap.png",
         "attackType": "Real Iris",
         "initial": "Normal",
