@@ -20,9 +20,9 @@ Each participant's data contains:
 * A list of JSON objects with detailed data on a per-image basis
 
 #### Requesting a Copy of the Dataset
-Instructions on how to obtain a copy of the dataset can be found at the [Notre Dame's Computer Vision Research Lab webpage](https://cvrl.nd.edu/projects/data) (search for AutoSIGHT dataset). Any questions can be directed to Adam Czajka at aczajka@nd.edu.
+Instructions on how to obtain a copy of the dataset can be found at the [Notre Dame's Computer Vision Research Lab webpage](https://cvrl.nd.edu/projects/data) (search for the "AutoSIGHT" dataset). Any questions can be directed to Adam Czajka at aczajka@nd.edu.
 
-#### Detailed
+#### Details
 The data set is organized on a per-participant basis where each participant has a collection of sequence files for different window sizes and a list of JSON objects which reflect statistics for each image shown to the participant in that study. A summary of what each JSON object contains is shown and explained below:
 
 * Participant's identifier and expertise level
