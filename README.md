@@ -1,6 +1,6 @@
 # AutoSIGHT: Automatic Eye Tracking-based System for Immediate Grading of Human experTise
 
-Official repository for IEEE Vision Languages and Human Centric Computing (VL/HCC 2025) paper: **IEEEXplore | [ArXiv](https://arxiv.org/abs/2508.01015)**
+Official repository for the IEEE Vision Languages and Human Centric Computing (VL/HCC 2025) paper: **IEEEXplore | [ArXiv](https://arxiv.org/abs/2508.01015)**
 
 ## AutoSIGHT Architecture Overview
 
