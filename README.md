@@ -13,11 +13,11 @@ Official repository for IEEE Vision Languages and Human Centric Computing (VL/HC
 
 ## Dataset Overview
 #### Summary
-* Each Participant's data will contain:
-    * Master file of gaze locations for the experiment
-    * Eye Gaze Heatmaps for each image the participant evaluated
-    * Gaze sequence files for 5, 10, 15, 20, and 30 second window sizes
-    * A list of JSON objects with detailed data on a per-image basis
+Each participant's data contains:
+* Master file of gaze locations for the experiment
+* Eye gaze heatmaps for each image the participant evaluated
+* Gaze sequence files for 5, 10, 15, 20, and 30 second window sizes
+* A list of JSON objects with detailed data on a per-image basis
 
 #### Requesting a Copy of the Dataset
 Instructions on how to obtain a copy of the dataset can be found at the [Notre Dame's Computer Vision Research Lab webpage](https://cvrl.nd.edu/projects/data) (search for AutoSIGHT dataset). Any questions can be directed to Adam Czajka at aczajka@nd.edu.
@@ -27,12 +27,12 @@ The data set is organized on a per-participant basis where each participant has 
 
 * Participant's identifier and expertise level
 * Link to the original dataset image
-* Link to `Eye Gaze Heatmap` file
+* Link to eye gaze heatmap file
 * Ground truth label of the image sample
-* `Inital` and `Final` answers given by participant
-* `List of Fixation Times`
-* `Fixation Count` for entire evaluation
-* `Average Fixation Duration` (MS) for entire evaluation
+* Inital and final answers given by participant
+* List of fixation times
+* Fixation count for entire evaluation
+* Average fixation duration (MS) for entire evaluation
 * The final 5 lists contain references to sequence files such as:
     * If `sequences_5_Second` contains [1,2,3], this means that in the `5_Second` folder for this partipant, the csv files `sequence_1`, `sequence_2`, and `sequence_3` contain information for this image.
     * The same logic applies for the other window sizes
