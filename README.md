@@ -70,11 +70,14 @@ The data set is organized on a per-participant basis where each participant has 
 
 ## Citation
 ```
-@article{dowling2025autosight,
-  title={AutoSIGHT: Automatic Eye Tracking-based System for Immediate Grading of Human experTise},
-  author={Dowling, Byron and Probcin, Jozef and Czajka, Adam},
-  journal={arXiv preprint arXiv:2508.01015},
-  year={2025}
+@inproceedings{dowling2025autosight,
+  title        = {AutoSIGHT: Automatic Eye Tracking-based System for Immediate Grading of Human experTise},
+  author       = {Dowling, Byron and Probcin, Jozef and Czajka, Adam},
+  booktitle    = {Proceedings of the IEEE Symposium on Visual Languages and Human-Centric Computing (VL/HCC)},
+  year         = {2025},
+  pages        = {1--8},
+  publisher    = {IEEE},
+  address      = {7-10 October 2025, Raleigh, North Carolina, United States},
 }
 ```
 
