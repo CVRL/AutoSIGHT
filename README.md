@@ -69,7 +69,7 @@ The data set is organized on a per-participant basis where each participant has 
 
 ## Model Weights
 
-The `AutoSIGHT.py` script can be used to train the models as specified in the paper. We also offer the weights of the best model for each time window in this [box folder](https://notredame.box.com/s/apxk1f3zo9hoecmb4fenui2gvpmujl9n).
+The `AutoSIGHT.py` script can be used to train the models as specified in the paper. We also offer the weights of the best models for each time window in this [box folder](https://notredame.box.com/s/apxk1f3zo9hoecmb4fenui2gvpmujl9n).
 
 ## Citation
 ```
