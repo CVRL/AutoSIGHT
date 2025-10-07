@@ -67,6 +67,7 @@ class EyeTrackingDataLoader(Dataset):
 
                     meanXYdist = self.average_euclidean_distance(fixation_file_path)
 
+                    ## Handles the rare instance where on very small window sizes there is no variance in fixation location
                     if math.isnan(meanXYdist):
                         print(f'NaN Found on Sequence #{sequence_number}, excluding sequence')
                     else:
@@ -277,10 +278,10 @@ def train_and_evaluate(train_dataset, val_dataset, test_dataset, trial_num, wind
     ## Saving Best Performing Model
     ## Timestamps are used for unique-ness
     timestamp = time.time()
-    timestamp = int(timestamp)
+    timestamp  = datetime.fromtimestamp(timestamp)
     timestamp = str(timestamp)
     model_path_dir = '*** REPLACE WITH YOUR ACTUAL PATH! ***'
-    best_model_path = f"{model_path_dir}/best_model_{timestamp}.pth"
+    best_model_path = f"{model_path_dir}/best_model_{window_size}_{kernel_size}_{timestamp}.pth"
     
     ## Training loop with validation
     model.train()
@@ -360,16 +361,16 @@ def train_and_evaluate(train_dataset, val_dataset, test_dataset, trial_num, wind
     fpr, tpr, thresholds = roc(all_preds, all_labels.long())
     
     ## Plot ROC curve
-    plt.figure(figsize=(8, 6))
-    plt.plot(fpr, tpr, label=f'ROC Curve (AUROC = {auroc_score:.4f})')
-    plt.plot([0, 1], [0, 1], 'k--')
-    plt.xlabel('False Positive Rate')
-    plt.ylabel('True Positive Rate')
-    plt.title('Receiver Operating Characteristic (ROC) Curve')
-    plt.legend(loc='lower right')
-    plt.grid(True)
-    plt.savefig('roc_curve.png')
-    plt.close()
+    # plt.figure(figsize=(8, 6))
+    # plt.plot(fpr, tpr, label=f'ROC Curve (AUROC = {auroc_score:.4f})')
+    # plt.plot([0, 1], [0, 1], 'k--')
+    # plt.xlabel('False Positive Rate')
+    # plt.ylabel('True Positive Rate')
+    # plt.title('Receiver Operating Characteristic (ROC) Curve')
+    # plt.legend(loc='lower right')
+    # plt.grid(True)
+    # plt.savefig('roc_curve.png')
+    # plt.close()
     
     ## Additional metrics
     precision = Precision(task="binary", threshold=0.5)
@@ -399,7 +400,7 @@ def train_and_evaluate(train_dataset, val_dataset, test_dataset, trial_num, wind
     
     results_df = pd.DataFrame(test_results)
     output_dir = '*** REPLACE WITH YOUR ACTUAL PATH! ***'
-    df_name = f'Trial_{trial_num+1}_{window_size}_050925_KS{kernel_size}_{num_epochs}epochs.csv'
+    df_name = f'Trial_{trial_num+1}_{window_size}_{timestamp}_KS{kernel_size}_{num_epochs}epochs.csv'
     results_df.to_csv(f'{output_dir}/{df_name}', index=False)
     
     # Print results
@@ -435,7 +436,7 @@ if __name__ == "__main__":
                     'NE_047','NE_048','NE_051','NE_052','NE_053','NE_054','NE_056','NE_057','NE_058',
                     'NE_059','NE_060','NE_061','NE_062','NE_063','NE_064', 'NE_065']
     
-    experts = ['E_038', 'E_067', 'E_068', 'E_069', 'E_072']
+    experts = ['E_026', 'E_038', 'E_067', 'E_068', 'E_069', 'E_072']
 
     """
         Experiment Object:
@@ -452,9 +453,11 @@ if __name__ == "__main__":
                         "E_072",
                         "E_069",
                         "E_067",
+                        "E_026",
                         "NE_017",
                         "NE_027",
-                        "NE_020"
+                        "NE_020",
+                        "NE_062"
                     ],
                     "Validation_Subs": [
                         "E_068",
@@ -522,6 +525,13 @@ if __name__ == "__main__":
                 nxTrainSubs = non_experts[-len(xTrainSubs):]
                 trainingSubjects = xTrainSubs + nxTrainSubs
 
+                """
+                    The way my data is set up, I have a folder called participants, thus "participantPath"
+                    and in that folder each expert and non-expert have a folder named after their "file_NC"
+                    E_038, NE_002, etc. From there, there are folders for window sizes and sequences that are
+                    fetched to be loaded in the dataloader. Essentially if the data can be organized in a specific
+                    manner, there is a folder for it under that participant.
+                """
                 participantPath = '*** REPLACE WITH YOUR ACTUAL PATH! ***'
 
                 experimentObject["Trial"] = i+1
@@ -548,6 +558,6 @@ if __name__ == "__main__":
                 experimentObjects.append(copy.deepcopy(experimentObject))
 
 
-            # Dump the results to new JSON file
+            ## Dump the results to new JSON file
             with open (f'Results_{window_sizes[index]}_KS{kernel_size}_{epochs}epochs.json', 'w') as Fout:
                 json.dump(experimentObjects, Fout, indent=4)
